@@ -1,0 +1,2 @@
+module AwolooHelper
+end
