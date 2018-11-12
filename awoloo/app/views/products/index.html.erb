@@ -1,21 +1,28 @@
 <div class = "container">
-<h1>Listing articles</h1>
- 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Subtitle</th>
-    <th>Description</th>
-  </tr>
- 
-  <% @products.each do |product| %>
-    <tr>
-      <td><%= product.title %></td>
-      <td><%= product.subtitle %></td>
-      <td><%= product.description %></td>
-      <td><%= link_to 'Show', product_path(product) %></td>
-    </tr>
-  <% end %>
-</table>
+    <h1>Listing articles</h1>
+
+    <%= link_to 'Products Home', controller: 'products'%>
+    <%= link_to 'New Product', new_product_path %>
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Description</th>
+        </tr>
+    
+        <% @products.each do |product| %>
+            <tr>
+                <td><%= product.title %></td>
+                <td><%= product.subtitle %></td>
+                <td><%= product.description %></td>
+                <td><%= link_to 'Show', product_path(product) %></td>
+                <td><%= link_to 'Edit', edit_product_path(product) %></td>
+                <td><%= link_to 'Destroy', product_path(product),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <% end %>  
+    </table>
 
 </div>

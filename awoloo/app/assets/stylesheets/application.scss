@@ -137,6 +137,10 @@
      background-color: white;
  }
 
+ .field_with_errors {
+     color: red;
+ }
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {}
 
